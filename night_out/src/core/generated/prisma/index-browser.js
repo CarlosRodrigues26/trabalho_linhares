@@ -125,19 +125,15 @@ exports.Prisma.ArtistaScalarFieldEnum = {
   nome: 'nome',
   genero: 'genero',
   nacionalidade: 'nacionalidade',
-  dataNascimento: 'dataNascimento',
-  biografia: 'biografia',
-  cacheMedio: 'cacheMedio'
+  dataNascimento: 'dataNascimento'
 };
 
 exports.Prisma.CasaDeShowScalarFieldEnum = {
   id: 'id',
   nome: 'nome',
   endereco: 'endereco',
-  capacidade: 'capacidade',
   cidade: 'cidade',
-  telefone: 'telefone',
-  site: 'site'
+  telefone: 'telefone'
 };
 
 exports.Prisma.SortOrder = {

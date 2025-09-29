@@ -957,18 +957,8 @@ export namespace Prisma {
 
   export type AggregateArtista = {
     _count: ArtistaCountAggregateOutputType | null
-    _avg: ArtistaAvgAggregateOutputType | null
-    _sum: ArtistaSumAggregateOutputType | null
     _min: ArtistaMinAggregateOutputType | null
     _max: ArtistaMaxAggregateOutputType | null
-  }
-
-  export type ArtistaAvgAggregateOutputType = {
-    cacheMedio: number | null
-  }
-
-  export type ArtistaSumAggregateOutputType = {
-    cacheMedio: number | null
   }
 
   export type ArtistaMinAggregateOutputType = {
@@ -977,8 +967,6 @@ export namespace Prisma {
     genero: string | null
     nacionalidade: string | null
     dataNascimento: Date | null
-    biografia: string | null
-    cacheMedio: number | null
   }
 
   export type ArtistaMaxAggregateOutputType = {
@@ -987,8 +975,6 @@ export namespace Prisma {
     genero: string | null
     nacionalidade: string | null
     dataNascimento: Date | null
-    biografia: string | null
-    cacheMedio: number | null
   }
 
   export type ArtistaCountAggregateOutputType = {
@@ -997,19 +983,9 @@ export namespace Prisma {
     genero: number
     nacionalidade: number
     dataNascimento: number
-    biografia: number
-    cacheMedio: number
     _all: number
   }
 
-
-  export type ArtistaAvgAggregateInputType = {
-    cacheMedio?: true
-  }
-
-  export type ArtistaSumAggregateInputType = {
-    cacheMedio?: true
-  }
 
   export type ArtistaMinAggregateInputType = {
     id?: true
@@ -1017,8 +993,6 @@ export namespace Prisma {
     genero?: true
     nacionalidade?: true
     dataNascimento?: true
-    biografia?: true
-    cacheMedio?: true
   }
 
   export type ArtistaMaxAggregateInputType = {
@@ -1027,8 +1001,6 @@ export namespace Prisma {
     genero?: true
     nacionalidade?: true
     dataNascimento?: true
-    biografia?: true
-    cacheMedio?: true
   }
 
   export type ArtistaCountAggregateInputType = {
@@ -1037,8 +1009,6 @@ export namespace Prisma {
     genero?: true
     nacionalidade?: true
     dataNascimento?: true
-    biografia?: true
-    cacheMedio?: true
     _all?: true
   }
 
@@ -1080,18 +1050,6 @@ export namespace Prisma {
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
-     * Select which fields to average
-    **/
-    _avg?: ArtistaAvgAggregateInputType
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
-     * 
-     * Select which fields to sum
-    **/
-    _sum?: ArtistaSumAggregateInputType
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
-     * 
      * Select which fields to find the minimum value
     **/
     _min?: ArtistaMinAggregateInputType
@@ -1122,8 +1080,6 @@ export namespace Prisma {
     take?: number
     skip?: number
     _count?: ArtistaCountAggregateInputType | true
-    _avg?: ArtistaAvgAggregateInputType
-    _sum?: ArtistaSumAggregateInputType
     _min?: ArtistaMinAggregateInputType
     _max?: ArtistaMaxAggregateInputType
   }
@@ -1134,11 +1090,7 @@ export namespace Prisma {
     genero: string | null
     nacionalidade: string | null
     dataNascimento: Date | null
-    biografia: string | null
-    cacheMedio: number | null
     _count: ArtistaCountAggregateOutputType | null
-    _avg: ArtistaAvgAggregateOutputType | null
-    _sum: ArtistaSumAggregateOutputType | null
     _min: ArtistaMinAggregateOutputType | null
     _max: ArtistaMaxAggregateOutputType | null
   }
@@ -1163,8 +1115,6 @@ export namespace Prisma {
     genero?: boolean
     nacionalidade?: boolean
     dataNascimento?: boolean
-    biografia?: boolean
-    cacheMedio?: boolean
   }, ExtArgs["result"]["artista"]>
 
   export type ArtistaSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
@@ -1173,8 +1123,6 @@ export namespace Prisma {
     genero?: boolean
     nacionalidade?: boolean
     dataNascimento?: boolean
-    biografia?: boolean
-    cacheMedio?: boolean
   }, ExtArgs["result"]["artista"]>
 
   export type ArtistaSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
@@ -1183,8 +1131,6 @@ export namespace Prisma {
     genero?: boolean
     nacionalidade?: boolean
     dataNascimento?: boolean
-    biografia?: boolean
-    cacheMedio?: boolean
   }, ExtArgs["result"]["artista"]>
 
   export type ArtistaSelectScalar = {
@@ -1193,11 +1139,9 @@ export namespace Prisma {
     genero?: boolean
     nacionalidade?: boolean
     dataNascimento?: boolean
-    biografia?: boolean
-    cacheMedio?: boolean
   }
 
-  export type ArtistaOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "nome" | "genero" | "nacionalidade" | "dataNascimento" | "biografia" | "cacheMedio", ExtArgs["result"]["artista"]>
+  export type ArtistaOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "nome" | "genero" | "nacionalidade" | "dataNascimento", ExtArgs["result"]["artista"]>
 
   export type $ArtistaPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "Artista"
@@ -1208,8 +1152,6 @@ export namespace Prisma {
       genero: string | null
       nacionalidade: string | null
       dataNascimento: Date | null
-      biografia: string | null
-      cacheMedio: number | null
     }, ExtArgs["result"]["artista"]>
     composites: {}
   }
@@ -1638,8 +1580,6 @@ export namespace Prisma {
     readonly genero: FieldRef<"Artista", 'String'>
     readonly nacionalidade: FieldRef<"Artista", 'String'>
     readonly dataNascimento: FieldRef<"Artista", 'DateTime'>
-    readonly biografia: FieldRef<"Artista", 'String'>
-    readonly cacheMedio: FieldRef<"Artista", 'Float'>
   }
     
 
@@ -2012,88 +1952,58 @@ export namespace Prisma {
 
   export type AggregateCasaDeShow = {
     _count: CasaDeShowCountAggregateOutputType | null
-    _avg: CasaDeShowAvgAggregateOutputType | null
-    _sum: CasaDeShowSumAggregateOutputType | null
     _min: CasaDeShowMinAggregateOutputType | null
     _max: CasaDeShowMaxAggregateOutputType | null
-  }
-
-  export type CasaDeShowAvgAggregateOutputType = {
-    capacidade: number | null
-  }
-
-  export type CasaDeShowSumAggregateOutputType = {
-    capacidade: number | null
   }
 
   export type CasaDeShowMinAggregateOutputType = {
     id: string | null
     nome: string | null
     endereco: string | null
-    capacidade: number | null
     cidade: string | null
     telefone: string | null
-    site: string | null
   }
 
   export type CasaDeShowMaxAggregateOutputType = {
     id: string | null
     nome: string | null
     endereco: string | null
-    capacidade: number | null
     cidade: string | null
     telefone: string | null
-    site: string | null
   }
 
   export type CasaDeShowCountAggregateOutputType = {
     id: number
     nome: number
     endereco: number
-    capacidade: number
     cidade: number
     telefone: number
-    site: number
     _all: number
   }
 
-
-  export type CasaDeShowAvgAggregateInputType = {
-    capacidade?: true
-  }
-
-  export type CasaDeShowSumAggregateInputType = {
-    capacidade?: true
-  }
 
   export type CasaDeShowMinAggregateInputType = {
     id?: true
     nome?: true
     endereco?: true
-    capacidade?: true
     cidade?: true
     telefone?: true
-    site?: true
   }
 
   export type CasaDeShowMaxAggregateInputType = {
     id?: true
     nome?: true
     endereco?: true
-    capacidade?: true
     cidade?: true
     telefone?: true
-    site?: true
   }
 
   export type CasaDeShowCountAggregateInputType = {
     id?: true
     nome?: true
     endereco?: true
-    capacidade?: true
     cidade?: true
     telefone?: true
-    site?: true
     _all?: true
   }
 
@@ -2135,18 +2045,6 @@ export namespace Prisma {
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
-     * Select which fields to average
-    **/
-    _avg?: CasaDeShowAvgAggregateInputType
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
-     * 
-     * Select which fields to sum
-    **/
-    _sum?: CasaDeShowSumAggregateInputType
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
-     * 
      * Select which fields to find the minimum value
     **/
     _min?: CasaDeShowMinAggregateInputType
@@ -2177,8 +2075,6 @@ export namespace Prisma {
     take?: number
     skip?: number
     _count?: CasaDeShowCountAggregateInputType | true
-    _avg?: CasaDeShowAvgAggregateInputType
-    _sum?: CasaDeShowSumAggregateInputType
     _min?: CasaDeShowMinAggregateInputType
     _max?: CasaDeShowMaxAggregateInputType
   }
@@ -2187,13 +2083,9 @@ export namespace Prisma {
     id: string
     nome: string
     endereco: string
-    capacidade: number
     cidade: string
     telefone: string | null
-    site: string | null
     _count: CasaDeShowCountAggregateOutputType | null
-    _avg: CasaDeShowAvgAggregateOutputType | null
-    _sum: CasaDeShowSumAggregateOutputType | null
     _min: CasaDeShowMinAggregateOutputType | null
     _max: CasaDeShowMaxAggregateOutputType | null
   }
@@ -2216,43 +2108,35 @@ export namespace Prisma {
     id?: boolean
     nome?: boolean
     endereco?: boolean
-    capacidade?: boolean
     cidade?: boolean
     telefone?: boolean
-    site?: boolean
   }, ExtArgs["result"]["casaDeShow"]>
 
   export type CasaDeShowSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     nome?: boolean
     endereco?: boolean
-    capacidade?: boolean
     cidade?: boolean
     telefone?: boolean
-    site?: boolean
   }, ExtArgs["result"]["casaDeShow"]>
 
   export type CasaDeShowSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     nome?: boolean
     endereco?: boolean
-    capacidade?: boolean
     cidade?: boolean
     telefone?: boolean
-    site?: boolean
   }, ExtArgs["result"]["casaDeShow"]>
 
   export type CasaDeShowSelectScalar = {
     id?: boolean
     nome?: boolean
     endereco?: boolean
-    capacidade?: boolean
     cidade?: boolean
     telefone?: boolean
-    site?: boolean
   }
 
-  export type CasaDeShowOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "nome" | "endereco" | "capacidade" | "cidade" | "telefone" | "site", ExtArgs["result"]["casaDeShow"]>
+  export type CasaDeShowOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "nome" | "endereco" | "cidade" | "telefone", ExtArgs["result"]["casaDeShow"]>
 
   export type $CasaDeShowPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "CasaDeShow"
@@ -2261,10 +2145,8 @@ export namespace Prisma {
       id: string
       nome: string
       endereco: string
-      capacidade: number
       cidade: string
       telefone: string | null
-      site: string | null
     }, ExtArgs["result"]["casaDeShow"]>
     composites: {}
   }
@@ -2691,10 +2573,8 @@ export namespace Prisma {
     readonly id: FieldRef<"CasaDeShow", 'String'>
     readonly nome: FieldRef<"CasaDeShow", 'String'>
     readonly endereco: FieldRef<"CasaDeShow", 'String'>
-    readonly capacidade: FieldRef<"CasaDeShow", 'Int'>
     readonly cidade: FieldRef<"CasaDeShow", 'String'>
     readonly telefone: FieldRef<"CasaDeShow", 'String'>
-    readonly site: FieldRef<"CasaDeShow", 'String'>
   }
     
 
@@ -3080,9 +2960,7 @@ export namespace Prisma {
     nome: 'nome',
     genero: 'genero',
     nacionalidade: 'nacionalidade',
-    dataNascimento: 'dataNascimento',
-    biografia: 'biografia',
-    cacheMedio: 'cacheMedio'
+    dataNascimento: 'dataNascimento'
   };
 
   export type ArtistaScalarFieldEnum = (typeof ArtistaScalarFieldEnum)[keyof typeof ArtistaScalarFieldEnum]
@@ -3092,10 +2970,8 @@ export namespace Prisma {
     id: 'id',
     nome: 'nome',
     endereco: 'endereco',
-    capacidade: 'capacidade',
     cidade: 'cidade',
-    telefone: 'telefone',
-    site: 'site'
+    telefone: 'telefone'
   };
 
   export type CasaDeShowScalarFieldEnum = (typeof CasaDeShowScalarFieldEnum)[keyof typeof CasaDeShowScalarFieldEnum]
@@ -3159,20 +3035,6 @@ export namespace Prisma {
 
 
   /**
-   * Reference to a field of type 'Float'
-   */
-  export type FloatFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Float'>
-    
-
-
-  /**
-   * Reference to a field of type 'Float[]'
-   */
-  export type ListFloatFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Float[]'>
-    
-
-
-  /**
    * Reference to a field of type 'Int'
    */
   export type IntFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Int'>
@@ -3198,8 +3060,6 @@ export namespace Prisma {
     genero?: StringNullableFilter<"Artista"> | string | null
     nacionalidade?: StringNullableFilter<"Artista"> | string | null
     dataNascimento?: DateTimeNullableFilter<"Artista"> | Date | string | null
-    biografia?: StringNullableFilter<"Artista"> | string | null
-    cacheMedio?: FloatNullableFilter<"Artista"> | number | null
   }
 
   export type ArtistaOrderByWithRelationInput = {
@@ -3208,8 +3068,6 @@ export namespace Prisma {
     genero?: SortOrderInput | SortOrder
     nacionalidade?: SortOrderInput | SortOrder
     dataNascimento?: SortOrderInput | SortOrder
-    biografia?: SortOrderInput | SortOrder
-    cacheMedio?: SortOrderInput | SortOrder
   }
 
   export type ArtistaWhereUniqueInput = Prisma.AtLeast<{
@@ -3221,8 +3079,6 @@ export namespace Prisma {
     genero?: StringNullableFilter<"Artista"> | string | null
     nacionalidade?: StringNullableFilter<"Artista"> | string | null
     dataNascimento?: DateTimeNullableFilter<"Artista"> | Date | string | null
-    biografia?: StringNullableFilter<"Artista"> | string | null
-    cacheMedio?: FloatNullableFilter<"Artista"> | number | null
   }, "id">
 
   export type ArtistaOrderByWithAggregationInput = {
@@ -3231,13 +3087,9 @@ export namespace Prisma {
     genero?: SortOrderInput | SortOrder
     nacionalidade?: SortOrderInput | SortOrder
     dataNascimento?: SortOrderInput | SortOrder
-    biografia?: SortOrderInput | SortOrder
-    cacheMedio?: SortOrderInput | SortOrder
     _count?: ArtistaCountOrderByAggregateInput
-    _avg?: ArtistaAvgOrderByAggregateInput
     _max?: ArtistaMaxOrderByAggregateInput
     _min?: ArtistaMinOrderByAggregateInput
-    _sum?: ArtistaSumOrderByAggregateInput
   }
 
   export type ArtistaScalarWhereWithAggregatesInput = {
@@ -3249,8 +3101,6 @@ export namespace Prisma {
     genero?: StringNullableWithAggregatesFilter<"Artista"> | string | null
     nacionalidade?: StringNullableWithAggregatesFilter<"Artista"> | string | null
     dataNascimento?: DateTimeNullableWithAggregatesFilter<"Artista"> | Date | string | null
-    biografia?: StringNullableWithAggregatesFilter<"Artista"> | string | null
-    cacheMedio?: FloatNullableWithAggregatesFilter<"Artista"> | number | null
   }
 
   export type CasaDeShowWhereInput = {
@@ -3260,20 +3110,16 @@ export namespace Prisma {
     id?: StringFilter<"CasaDeShow"> | string
     nome?: StringFilter<"CasaDeShow"> | string
     endereco?: StringFilter<"CasaDeShow"> | string
-    capacidade?: IntFilter<"CasaDeShow"> | number
     cidade?: StringFilter<"CasaDeShow"> | string
     telefone?: StringNullableFilter<"CasaDeShow"> | string | null
-    site?: StringNullableFilter<"CasaDeShow"> | string | null
   }
 
   export type CasaDeShowOrderByWithRelationInput = {
     id?: SortOrder
     nome?: SortOrder
     endereco?: SortOrder
-    capacidade?: SortOrder
     cidade?: SortOrder
     telefone?: SortOrderInput | SortOrder
-    site?: SortOrderInput | SortOrder
   }
 
   export type CasaDeShowWhereUniqueInput = Prisma.AtLeast<{
@@ -3283,25 +3129,19 @@ export namespace Prisma {
     NOT?: CasaDeShowWhereInput | CasaDeShowWhereInput[]
     nome?: StringFilter<"CasaDeShow"> | string
     endereco?: StringFilter<"CasaDeShow"> | string
-    capacidade?: IntFilter<"CasaDeShow"> | number
     cidade?: StringFilter<"CasaDeShow"> | string
     telefone?: StringNullableFilter<"CasaDeShow"> | string | null
-    site?: StringNullableFilter<"CasaDeShow"> | string | null
   }, "id">
 
   export type CasaDeShowOrderByWithAggregationInput = {
     id?: SortOrder
     nome?: SortOrder
     endereco?: SortOrder
-    capacidade?: SortOrder
     cidade?: SortOrder
     telefone?: SortOrderInput | SortOrder
-    site?: SortOrderInput | SortOrder
     _count?: CasaDeShowCountOrderByAggregateInput
-    _avg?: CasaDeShowAvgOrderByAggregateInput
     _max?: CasaDeShowMaxOrderByAggregateInput
     _min?: CasaDeShowMinOrderByAggregateInput
-    _sum?: CasaDeShowSumOrderByAggregateInput
   }
 
   export type CasaDeShowScalarWhereWithAggregatesInput = {
@@ -3311,10 +3151,8 @@ export namespace Prisma {
     id?: StringWithAggregatesFilter<"CasaDeShow"> | string
     nome?: StringWithAggregatesFilter<"CasaDeShow"> | string
     endereco?: StringWithAggregatesFilter<"CasaDeShow"> | string
-    capacidade?: IntWithAggregatesFilter<"CasaDeShow"> | number
     cidade?: StringWithAggregatesFilter<"CasaDeShow"> | string
     telefone?: StringNullableWithAggregatesFilter<"CasaDeShow"> | string | null
-    site?: StringNullableWithAggregatesFilter<"CasaDeShow"> | string | null
   }
 
   export type ArtistaCreateInput = {
@@ -3323,8 +3161,6 @@ export namespace Prisma {
     genero?: string | null
     nacionalidade?: string | null
     dataNascimento?: Date | string | null
-    biografia?: string | null
-    cacheMedio?: number | null
   }
 
   export type ArtistaUncheckedCreateInput = {
@@ -3333,8 +3169,6 @@ export namespace Prisma {
     genero?: string | null
     nacionalidade?: string | null
     dataNascimento?: Date | string | null
-    biografia?: string | null
-    cacheMedio?: number | null
   }
 
   export type ArtistaUpdateInput = {
@@ -3343,8 +3177,6 @@ export namespace Prisma {
     genero?: NullableStringFieldUpdateOperationsInput | string | null
     nacionalidade?: NullableStringFieldUpdateOperationsInput | string | null
     dataNascimento?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    biografia?: NullableStringFieldUpdateOperationsInput | string | null
-    cacheMedio?: NullableFloatFieldUpdateOperationsInput | number | null
   }
 
   export type ArtistaUncheckedUpdateInput = {
@@ -3353,8 +3185,6 @@ export namespace Prisma {
     genero?: NullableStringFieldUpdateOperationsInput | string | null
     nacionalidade?: NullableStringFieldUpdateOperationsInput | string | null
     dataNascimento?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    biografia?: NullableStringFieldUpdateOperationsInput | string | null
-    cacheMedio?: NullableFloatFieldUpdateOperationsInput | number | null
   }
 
   export type ArtistaCreateManyInput = {
@@ -3363,8 +3193,6 @@ export namespace Prisma {
     genero?: string | null
     nacionalidade?: string | null
     dataNascimento?: Date | string | null
-    biografia?: string | null
-    cacheMedio?: number | null
   }
 
   export type ArtistaUpdateManyMutationInput = {
@@ -3373,8 +3201,6 @@ export namespace Prisma {
     genero?: NullableStringFieldUpdateOperationsInput | string | null
     nacionalidade?: NullableStringFieldUpdateOperationsInput | string | null
     dataNascimento?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    biografia?: NullableStringFieldUpdateOperationsInput | string | null
-    cacheMedio?: NullableFloatFieldUpdateOperationsInput | number | null
   }
 
   export type ArtistaUncheckedUpdateManyInput = {
@@ -3383,78 +3209,62 @@ export namespace Prisma {
     genero?: NullableStringFieldUpdateOperationsInput | string | null
     nacionalidade?: NullableStringFieldUpdateOperationsInput | string | null
     dataNascimento?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    biografia?: NullableStringFieldUpdateOperationsInput | string | null
-    cacheMedio?: NullableFloatFieldUpdateOperationsInput | number | null
   }
 
   export type CasaDeShowCreateInput = {
     id?: string
     nome: string
     endereco: string
-    capacidade: number
     cidade: string
     telefone?: string | null
-    site?: string | null
   }
 
   export type CasaDeShowUncheckedCreateInput = {
     id?: string
     nome: string
     endereco: string
-    capacidade: number
     cidade: string
     telefone?: string | null
-    site?: string | null
   }
 
   export type CasaDeShowUpdateInput = {
     id?: StringFieldUpdateOperationsInput | string
     nome?: StringFieldUpdateOperationsInput | string
     endereco?: StringFieldUpdateOperationsInput | string
-    capacidade?: IntFieldUpdateOperationsInput | number
     cidade?: StringFieldUpdateOperationsInput | string
     telefone?: NullableStringFieldUpdateOperationsInput | string | null
-    site?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type CasaDeShowUncheckedUpdateInput = {
     id?: StringFieldUpdateOperationsInput | string
     nome?: StringFieldUpdateOperationsInput | string
     endereco?: StringFieldUpdateOperationsInput | string
-    capacidade?: IntFieldUpdateOperationsInput | number
     cidade?: StringFieldUpdateOperationsInput | string
     telefone?: NullableStringFieldUpdateOperationsInput | string | null
-    site?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type CasaDeShowCreateManyInput = {
     id?: string
     nome: string
     endereco: string
-    capacidade: number
     cidade: string
     telefone?: string | null
-    site?: string | null
   }
 
   export type CasaDeShowUpdateManyMutationInput = {
     id?: StringFieldUpdateOperationsInput | string
     nome?: StringFieldUpdateOperationsInput | string
     endereco?: StringFieldUpdateOperationsInput | string
-    capacidade?: IntFieldUpdateOperationsInput | number
     cidade?: StringFieldUpdateOperationsInput | string
     telefone?: NullableStringFieldUpdateOperationsInput | string | null
-    site?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type CasaDeShowUncheckedUpdateManyInput = {
     id?: StringFieldUpdateOperationsInput | string
     nome?: StringFieldUpdateOperationsInput | string
     endereco?: StringFieldUpdateOperationsInput | string
-    capacidade?: IntFieldUpdateOperationsInput | number
     cidade?: StringFieldUpdateOperationsInput | string
     telefone?: NullableStringFieldUpdateOperationsInput | string | null
-    site?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type StringFilter<$PrismaModel = never> = {
@@ -3498,17 +3308,6 @@ export namespace Prisma {
     not?: NestedDateTimeNullableFilter<$PrismaModel> | Date | string | null
   }
 
-  export type FloatNullableFilter<$PrismaModel = never> = {
-    equals?: number | FloatFieldRefInput<$PrismaModel> | null
-    in?: number[] | ListFloatFieldRefInput<$PrismaModel> | null
-    notIn?: number[] | ListFloatFieldRefInput<$PrismaModel> | null
-    lt?: number | FloatFieldRefInput<$PrismaModel>
-    lte?: number | FloatFieldRefInput<$PrismaModel>
-    gt?: number | FloatFieldRefInput<$PrismaModel>
-    gte?: number | FloatFieldRefInput<$PrismaModel>
-    not?: NestedFloatNullableFilter<$PrismaModel> | number | null
-  }
-
   export type SortOrderInput = {
     sort: SortOrder
     nulls?: NullsOrder
@@ -3520,12 +3319,6 @@ export namespace Prisma {
     genero?: SortOrder
     nacionalidade?: SortOrder
     dataNascimento?: SortOrder
-    biografia?: SortOrder
-    cacheMedio?: SortOrder
-  }
-
-  export type ArtistaAvgOrderByAggregateInput = {
-    cacheMedio?: SortOrder
   }
 
   export type ArtistaMaxOrderByAggregateInput = {
@@ -3534,8 +3327,6 @@ export namespace Prisma {
     genero?: SortOrder
     nacionalidade?: SortOrder
     dataNascimento?: SortOrder
-    biografia?: SortOrder
-    cacheMedio?: SortOrder
   }
 
   export type ArtistaMinOrderByAggregateInput = {
@@ -3544,12 +3335,6 @@ export namespace Prisma {
     genero?: SortOrder
     nacionalidade?: SortOrder
     dataNascimento?: SortOrder
-    biografia?: SortOrder
-    cacheMedio?: SortOrder
-  }
-
-  export type ArtistaSumOrderByAggregateInput = {
-    cacheMedio?: SortOrder
   }
 
   export type StringWithAggregatesFilter<$PrismaModel = never> = {
@@ -3602,85 +3387,28 @@ export namespace Prisma {
     _max?: NestedDateTimeNullableFilter<$PrismaModel>
   }
 
-  export type FloatNullableWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: number | FloatFieldRefInput<$PrismaModel> | null
-    in?: number[] | ListFloatFieldRefInput<$PrismaModel> | null
-    notIn?: number[] | ListFloatFieldRefInput<$PrismaModel> | null
-    lt?: number | FloatFieldRefInput<$PrismaModel>
-    lte?: number | FloatFieldRefInput<$PrismaModel>
-    gt?: number | FloatFieldRefInput<$PrismaModel>
-    gte?: number | FloatFieldRefInput<$PrismaModel>
-    not?: NestedFloatNullableWithAggregatesFilter<$PrismaModel> | number | null
-    _count?: NestedIntNullableFilter<$PrismaModel>
-    _avg?: NestedFloatNullableFilter<$PrismaModel>
-    _sum?: NestedFloatNullableFilter<$PrismaModel>
-    _min?: NestedFloatNullableFilter<$PrismaModel>
-    _max?: NestedFloatNullableFilter<$PrismaModel>
-  }
-
-  export type IntFilter<$PrismaModel = never> = {
-    equals?: number | IntFieldRefInput<$PrismaModel>
-    in?: number[] | ListIntFieldRefInput<$PrismaModel>
-    notIn?: number[] | ListIntFieldRefInput<$PrismaModel>
-    lt?: number | IntFieldRefInput<$PrismaModel>
-    lte?: number | IntFieldRefInput<$PrismaModel>
-    gt?: number | IntFieldRefInput<$PrismaModel>
-    gte?: number | IntFieldRefInput<$PrismaModel>
-    not?: NestedIntFilter<$PrismaModel> | number
-  }
-
   export type CasaDeShowCountOrderByAggregateInput = {
     id?: SortOrder
     nome?: SortOrder
     endereco?: SortOrder
-    capacidade?: SortOrder
     cidade?: SortOrder
     telefone?: SortOrder
-    site?: SortOrder
-  }
-
-  export type CasaDeShowAvgOrderByAggregateInput = {
-    capacidade?: SortOrder
   }
 
   export type CasaDeShowMaxOrderByAggregateInput = {
     id?: SortOrder
     nome?: SortOrder
     endereco?: SortOrder
-    capacidade?: SortOrder
     cidade?: SortOrder
     telefone?: SortOrder
-    site?: SortOrder
   }
 
   export type CasaDeShowMinOrderByAggregateInput = {
     id?: SortOrder
     nome?: SortOrder
     endereco?: SortOrder
-    capacidade?: SortOrder
     cidade?: SortOrder
     telefone?: SortOrder
-    site?: SortOrder
-  }
-
-  export type CasaDeShowSumOrderByAggregateInput = {
-    capacidade?: SortOrder
-  }
-
-  export type IntWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: number | IntFieldRefInput<$PrismaModel>
-    in?: number[] | ListIntFieldRefInput<$PrismaModel>
-    notIn?: number[] | ListIntFieldRefInput<$PrismaModel>
-    lt?: number | IntFieldRefInput<$PrismaModel>
-    lte?: number | IntFieldRefInput<$PrismaModel>
-    gt?: number | IntFieldRefInput<$PrismaModel>
-    gte?: number | IntFieldRefInput<$PrismaModel>
-    not?: NestedIntWithAggregatesFilter<$PrismaModel> | number
-    _count?: NestedIntFilter<$PrismaModel>
-    _avg?: NestedFloatFilter<$PrismaModel>
-    _sum?: NestedIntFilter<$PrismaModel>
-    _min?: NestedIntFilter<$PrismaModel>
-    _max?: NestedIntFilter<$PrismaModel>
   }
 
   export type StringFieldUpdateOperationsInput = {
@@ -3693,22 +3421,6 @@ export namespace Prisma {
 
   export type NullableDateTimeFieldUpdateOperationsInput = {
     set?: Date | string | null
-  }
-
-  export type NullableFloatFieldUpdateOperationsInput = {
-    set?: number | null
-    increment?: number
-    decrement?: number
-    multiply?: number
-    divide?: number
-  }
-
-  export type IntFieldUpdateOperationsInput = {
-    set?: number
-    increment?: number
-    decrement?: number
-    multiply?: number
-    divide?: number
   }
 
   export type NestedStringFilter<$PrismaModel = never> = {
@@ -3748,17 +3460,6 @@ export namespace Prisma {
     gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
     gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
     not?: NestedDateTimeNullableFilter<$PrismaModel> | Date | string | null
-  }
-
-  export type NestedFloatNullableFilter<$PrismaModel = never> = {
-    equals?: number | FloatFieldRefInput<$PrismaModel> | null
-    in?: number[] | ListFloatFieldRefInput<$PrismaModel> | null
-    notIn?: number[] | ListFloatFieldRefInput<$PrismaModel> | null
-    lt?: number | FloatFieldRefInput<$PrismaModel>
-    lte?: number | FloatFieldRefInput<$PrismaModel>
-    gt?: number | FloatFieldRefInput<$PrismaModel>
-    gte?: number | FloatFieldRefInput<$PrismaModel>
-    not?: NestedFloatNullableFilter<$PrismaModel> | number | null
   }
 
   export type NestedStringWithAggregatesFilter<$PrismaModel = never> = {
@@ -3829,49 +3530,6 @@ export namespace Prisma {
     _count?: NestedIntNullableFilter<$PrismaModel>
     _min?: NestedDateTimeNullableFilter<$PrismaModel>
     _max?: NestedDateTimeNullableFilter<$PrismaModel>
-  }
-
-  export type NestedFloatNullableWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: number | FloatFieldRefInput<$PrismaModel> | null
-    in?: number[] | ListFloatFieldRefInput<$PrismaModel> | null
-    notIn?: number[] | ListFloatFieldRefInput<$PrismaModel> | null
-    lt?: number | FloatFieldRefInput<$PrismaModel>
-    lte?: number | FloatFieldRefInput<$PrismaModel>
-    gt?: number | FloatFieldRefInput<$PrismaModel>
-    gte?: number | FloatFieldRefInput<$PrismaModel>
-    not?: NestedFloatNullableWithAggregatesFilter<$PrismaModel> | number | null
-    _count?: NestedIntNullableFilter<$PrismaModel>
-    _avg?: NestedFloatNullableFilter<$PrismaModel>
-    _sum?: NestedFloatNullableFilter<$PrismaModel>
-    _min?: NestedFloatNullableFilter<$PrismaModel>
-    _max?: NestedFloatNullableFilter<$PrismaModel>
-  }
-
-  export type NestedIntWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: number | IntFieldRefInput<$PrismaModel>
-    in?: number[] | ListIntFieldRefInput<$PrismaModel>
-    notIn?: number[] | ListIntFieldRefInput<$PrismaModel>
-    lt?: number | IntFieldRefInput<$PrismaModel>
-    lte?: number | IntFieldRefInput<$PrismaModel>
-    gt?: number | IntFieldRefInput<$PrismaModel>
-    gte?: number | IntFieldRefInput<$PrismaModel>
-    not?: NestedIntWithAggregatesFilter<$PrismaModel> | number
-    _count?: NestedIntFilter<$PrismaModel>
-    _avg?: NestedFloatFilter<$PrismaModel>
-    _sum?: NestedIntFilter<$PrismaModel>
-    _min?: NestedIntFilter<$PrismaModel>
-    _max?: NestedIntFilter<$PrismaModel>
-  }
-
-  export type NestedFloatFilter<$PrismaModel = never> = {
-    equals?: number | FloatFieldRefInput<$PrismaModel>
-    in?: number[] | ListFloatFieldRefInput<$PrismaModel>
-    notIn?: number[] | ListFloatFieldRefInput<$PrismaModel>
-    lt?: number | FloatFieldRefInput<$PrismaModel>
-    lte?: number | FloatFieldRefInput<$PrismaModel>
-    gt?: number | FloatFieldRefInput<$PrismaModel>
-    gte?: number | FloatFieldRefInput<$PrismaModel>
-    not?: NestedFloatFilter<$PrismaModel> | number
   }
 
 

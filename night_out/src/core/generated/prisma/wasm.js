@@ -97,19 +97,15 @@ exports.Prisma.ArtistaScalarFieldEnum = {
   nome: 'nome',
   genero: 'genero',
   nacionalidade: 'nacionalidade',
-  dataNascimento: 'dataNascimento',
-  biografia: 'biografia',
-  cacheMedio: 'cacheMedio'
+  dataNascimento: 'dataNascimento'
 };
 
 exports.Prisma.CasaDeShowScalarFieldEnum = {
   id: 'id',
   nome: 'nome',
   endereco: 'endereco',
-  capacidade: 'capacidade',
   cidade: 'cidade',
-  telefone: 'telefone',
-  site: 'site'
+  telefone: 'telefone'
 };
 
 exports.Prisma.SortOrder = {
@@ -180,13 +176,13 @@ const config = {
       }
     }
   },
-  "inlineSchema": "// This is your Prisma schema file,\n// learn more about it in the docs: https://pris.ly/d/prisma-schema\n\n// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?\n// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init\n\ngenerator client {\n  provider = \"prisma-client-js\"\n  output   = \"../generated/prisma\"\n}\n\ndatasource db {\n  provider = \"postgresql\"\n  url      = env(\"DATABASE_URL\")\n}\n\nmodel Artista {\n  id             String    @id @default(uuid())\n  nome           String\n  genero         String?\n  nacionalidade  String?\n  dataNascimento DateTime?\n  biografia      String?\n  cacheMedio     Float?\n}\n\nmodel CasaDeShow {\n  id         String  @id @default(uuid())\n  nome       String\n  endereco   String\n  capacidade Int\n  cidade     String\n  telefone   String?\n  site       String?\n}\n",
-  "inlineSchemaHash": "647d91a62809ca92e7689de98f6e73062ee246b0cacc82d37cd304a7c013396d",
+  "inlineSchema": "// This is your Prisma schema file,\n// learn more about it in the docs: https://pris.ly/d/prisma-schema\n\n// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?\n// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init\n\ngenerator client {\n  provider = \"prisma-client-js\"\n  output   = \"../generated/prisma\"\n}\n\ndatasource db {\n  provider = \"postgresql\"\n  url      = env(\"DATABASE_URL\")\n}\n\nmodel Artista {\n  id             String    @id @default(uuid())\n  nome           String\n  genero         String?\n  nacionalidade  String?\n  dataNascimento DateTime?\n}\n\nmodel CasaDeShow {\n  id       String  @id @default(uuid())\n  nome     String\n  endereco String\n  cidade   String\n  telefone String?\n}\n",
+  "inlineSchemaHash": "828c9cf82d556dea74f116e072afa6008d95c53dfb024e5b7b0386dd40c804e5",
   "copyEngine": true
 }
 config.dirname = '/'
 
-config.runtimeDataModel = JSON.parse("{\"models\":{\"Artista\":{\"fields\":[{\"name\":\"id\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"nome\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"genero\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"nacionalidade\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"dataNascimento\",\"kind\":\"scalar\",\"type\":\"DateTime\"},{\"name\":\"biografia\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"cacheMedio\",\"kind\":\"scalar\",\"type\":\"Float\"}],\"dbName\":null},\"CasaDeShow\":{\"fields\":[{\"name\":\"id\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"nome\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"endereco\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"capacidade\",\"kind\":\"scalar\",\"type\":\"Int\"},{\"name\":\"cidade\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"telefone\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"site\",\"kind\":\"scalar\",\"type\":\"String\"}],\"dbName\":null}},\"enums\":{},\"types\":{}}")
+config.runtimeDataModel = JSON.parse("{\"models\":{\"Artista\":{\"fields\":[{\"name\":\"id\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"nome\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"genero\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"nacionalidade\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"dataNascimento\",\"kind\":\"scalar\",\"type\":\"DateTime\"}],\"dbName\":null},\"CasaDeShow\":{\"fields\":[{\"name\":\"id\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"nome\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"endereco\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"cidade\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"telefone\",\"kind\":\"scalar\",\"type\":\"String\"}],\"dbName\":null}},\"enums\":{},\"types\":{}}")
 defineDmmfProperty(exports.Prisma, config.runtimeDataModel)
 config.engineWasm = {
   getRuntime: async () => require('./query_engine_bg.js'),
