@@ -1,6 +1,6 @@
 export interface ArtistaDTO {
-  nome: String;
-  genero: String;
-  nacionalidade: String;
+  nome: string;
+  genero: string;
+  nacionalidade: string;
   dataNascimento: Date;
 }
