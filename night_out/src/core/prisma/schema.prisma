@@ -21,16 +21,12 @@ model Artista {
   genero     String?
   nacionalidade String?
   dataNascimento DateTime?
-  biografia  String?
-  cacheMedio Float?
 }
 
 model CasaDeShow {
   id          String   @id @default(uuid())
   nome        String
   endereco    String
-  capacidade  Int
   cidade      String
   telefone    String?
-  site        String?
 }
