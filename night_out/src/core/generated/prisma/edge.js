@@ -139,7 +139,7 @@ const config = {
       "value": "prisma-client-js"
     },
     "output": {
-      "value": "/Users/carlos/Documents/faculdade/projeto_av2_linhares/night_out/src/core/generated/prisma",
+      "value": "C:\\Users\\ggdra\\OneDrive\\Desktop\\Matheus\\trabalho_linhares\\night_out\\src\\core\\generated\\prisma",
       "fromEnvVar": null
     },
     "config": {
@@ -148,12 +148,12 @@ const config = {
     "binaryTargets": [
       {
         "fromEnvVar": null,
-        "value": "darwin-arm64",
+        "value": "windows",
         "native": true
       }
     ],
     "previewFeatures": [],
-    "sourceFilePath": "/Users/carlos/Documents/faculdade/projeto_av2_linhares/night_out/src/core/prisma/schema.prisma",
+    "sourceFilePath": "C:\\Users\\ggdra\\OneDrive\\Desktop\\Matheus\\trabalho_linhares\\night_out\\src\\core\\prisma\\schema.prisma",
     "isCustomOutput": true
   },
   "relativeEnvPaths": {
